@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Entrepreneurship | Dalswin Life and Business Institute</title>
+    
+    <!-- External Libraries -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        :root {
+            --primary: #6a11cb;
+            --secondary: #2575fc;
+            --accent-orange: #ff7e5f;
+            --accent-purple: #8a2be2;
+            --light-bg: #f8f9fa;
+            --dark-text: #2c3e50;
+            --light-text: #f5f7fa;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: #333;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 20px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            background: rgba(255, 255, 255, 0.2);
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .logo i {
+            color: white;
+            font-size: 28px;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .header-decoration {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            opacity: 0.1;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 100px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80') center/cover no-repeat;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--dark-text);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #555;
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, var(--accent-purple), #a855f7);
+            color: white;
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(138, 43, 226, 0.6);
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--accent-purple);
+            color: var(--accent-purple);
+        }
+        
+        .btn-outline:hover {
+            background: var(--accent-purple);
+            color: white;
+        }
+        
+        /* Courses Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--dark-text);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+        
+        .courses {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        
+        .course-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            width: 100%;
+            max-width: 520px;
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .course-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .course-card:hover::before {
+            opacity: 1;
+        }
+        
+        .course-header {
+            padding: 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .course-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: -1;
+        }
+        
+        .two-weeks {
+            background: linear-gradient(135deg, var(--accent-orange) 0%, #feb47b 100%);
+        }
+        
+        .three-months {
+            background: linear-gradient(135deg, var(--accent-purple) 0%, #a855f7 100%);
+        }
+        
+        .course-header h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .duration {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .course-body {
+            padding: 35px;
+        }
+        
+        .price {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .price-amount {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        
+        .price-description {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .features {
+            margin-bottom: 30px;
+        }
+        
+        .features h4 {
+            color: var(--dark-text);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .features h4 i {
+            color: var(--primary);
+            background: rgba(106, 17, 203, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .features ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .features li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .features li:last-child {
+            border-bottom: none;
+        }
+        
+        .features li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 12px;
+            color: var(--accent-purple);
+            background: rgba(138, 43, 226, 0.1);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            text-align: center;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            box-shadow: 0 5px 15px rgba(106, 17, 203, 0.4);
+        }
+        
+        .cta-button:hover {
+            background: #4e0d9e;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(106, 17, 203, 0.6);
+        }
+        
+        .free-option {
+            background: var(--accent-orange);
+            box-shadow: 0 5px 15px rgba(255, 126, 95, 0.4);
+        }
+        
+        .free-option:hover {
+            background: #e06d50;
+            box-shadow: 0 8px 20px rgba(255, 126, 95, 0.6);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: var(--shadow);
+            margin-bottom: 80px;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .testimonial-card {
+            background: var(--light-bg);
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            border: 1px solid #eee;
+        }
+        
+        .testimonial-card::before {
+            content: """;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            color: rgba(106, 17, 203, 0.1);
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .author-details h4 {
+            color: var(--dark-text);
+            margin-bottom: 5px;
+        }
+        
+        .author-details p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        /* Info Section */
+        .info-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        
+        .info-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .info-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(106, 17, 203, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 30px;
+            color: var(--primary);
+        }
+        
+        .info-card h3 {
+            color: var(--dark-text);
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+        }
+        
+        .info-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Contact */
+        .contact {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 20px;
+            padding: 60px;
+            color: white;
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .contact-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .contact h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 12px 25px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .contact-item i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-text);
+            color: white;
+            padding: 50px 0 30px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+        
+        .footer-logo h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-logo p {
+            color: #aaa;
+            max-width: 350px;
+        }
+        
+        .footer-links {
+            min-width: 200px;
+        }
+        
+        .footer-links h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-links h4::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .copyright {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Animation classes for AOS */
+        [data-aos] {
+            transition: opacity 0.8s, transform 0.8s;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.4rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .contact {
+                padding: 40px 20px;
+            }
+            
+            .contact h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .logo-container {
+                justify-content: center;
+            }
+            
+            .course-body {
+                padding: 25px;
+            }
+            
+            .price-amount {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="logo">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Dalswin Institute</h1>
+                        <p>Life and Business Excellence</p>
+                    </div>
+                </div>
+                <div class="header-cta">
+                    <a href="https://tally.so/r/nr1raX" class="btn btn-outline">Apply Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="header-decoration">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0,150 C150,180 350,100 500,150 L500,00 L0,0 Z" style="stroke: none; fill: white;"></path>
+            </svg>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 data-aos="fade-up">Master Strategic Entrepreneurship</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Transform your business ideas into successful ventures with our evidence-based entrepreneurship programs</p>
+            <div class="hero-btns">
+                <a href="https://tally.so/r/nr1raX" class="btn btn-primary" data-aos="fade-up" data-aos-delay="200">Enroll Today</a>
+                <a href="#courses" class="btn btn-outline" data-aos="fade-up" data-aos-delay="300">View Programs</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Courses Section -->
+    <section id="courses" class="container">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Entrepreneurship Programs</h2>
+            <p>Choose the strategic entrepreneurship training that fits your goals and schedule</p>
+        </div>
+        
+        <div class="courses">
+            <!-- 2-Week Course -->
+            <div class="course-card" data-aos="fade-right">
+                <div class="course-header two-weeks">
+                    <h3>Entrepreneurship Essentials</h3>
+                    <p class="duration">2-Week Intensive Program</p>
+                </div>
+                <div class="course-body">
+                    <div class="price">
+                        <div class="price-amount">Free Access</div>
+                        <p class="price-description">$8 for official certificate</p>
+                    </div>
+                    
+                    <div class="features">
+                        <h4><i class="fas fa-graduation-cap"></i> What's Included</h4>
+                        <ul>
+                            <li>Complete access to all course materials for 2 weeks</li>
+                            <li>Daily entrepreneurial challenges and exercises</li>
+                            <li>Idea validation techniques and market analysis</li>
+                            <li>Business model canvas development</li>
+                            <li>Lean startup methodology fundamentals</li>
+                            <li>Community discussion forum access</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="https://tally.so/r/nr1raX" class="cta-button free-option">Enroll in Free Course</a>
+                    <a href="https://tally.so/r/nr1raX" class="cta-button">Add Certificate ($8)</a>
+                </div>
+            </div>
+            
+            <!-- 3-Month Course -->
+            <div class="course-card" data-aos="fade-left">
+                <div class="course-header three-months">
+                    <h3>Entrepreneurship Mastery</h3>
+                    <p class="duration">3-Month Comprehensive Training</p>
+                </div>
+                <div class="course-body">
+                    <div class="price">
+                        <div class="price-amount">$75</div>
+                        <p class="price-description">($25 per month) - Includes certificate</p>
+                    </div>
+                    
+                    <div class="features">
+                        <h4><i class="fas fa-star"></i> What's Included</h4>
+                        <ul>
+                            <li>All features of the 2-week course plus:</li>
+                            <li>Advanced business strategy development</li>
+                            <li>Personalized mentorship sessions (4 total)</li>
+                            <li>Financial planning and funding strategies</li>
+                            <li>Marketing and customer acquisition tactics</li>
+                            <li>Scaling and growth strategies</li>
+                            <li>Legal considerations for startups</li>
+                            <li>Official certification upon completion</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="https://tally.so/r/nr1raX" class="cta-button">Enroll in Mastery Program</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Testimonials -->
+        <div class="testimonials" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Success Stories</h2>
+                <p>Hear from our graduates about their entrepreneurial journeys</p>
+            </div>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <p class="testimonial-content">"The Entrepreneurship Mastery Program gave me the tools to turn my side project into a full-time business. I've doubled my revenue in just 6 months!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-details">
+                            <h4>Michael Rodriguez</h4>
+                            <p>Founder, TechSolutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <p class="testimonial-content">"The free course helped me validate my business idea before investing significant time and resources. The $8 certificate was worth every penny!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">S</div>
+                        <div class="author-details">
+                            <h4>Sarah Johnson</h4>
+                            <p>Eco-Product Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <p class="testimonial-content">"As a corporate employee, this program gave me the confidence and skills to launch my own consulting business on the side. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">D</div>
+                        <div class="author-details">
+                            <h4>David Chen</h4>
+                            <p>Management Consultant</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Info Section -->
+        <div class="info-section">
+            <div class="info-card" data-aos="fade-up">
+                <div class="info-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Proven Strategies</h3>
+                <p>Learn battle-tested entrepreneurial methods that have launched thousands of successful businesses worldwide.</p>
+            </div>
+            
+            <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="info-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Industry Connections</h3>
+                <p>Access our network of successful entrepreneurs, investors, and mentors to accelerate your journey.</p>
+            </div>
+            
+            <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="info-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>Practical Framework</h3>
+                <p>Our step-by-step approach helps you move from idea to execution with clarity and confidence.</p>
+            </div>
+        </div>
+        
+        <!-- Contact Section -->
+        <div class="contact" data-aos="fade-up">
+            <div class="contact-content">
+                <h2>Ready to Launch?</h2>
+                <p>Our admissions team is ready to help you choose the right entrepreneurial program</p>
+                <a href="https://tally.so/r/nr1raX" class="btn btn-outline">Contact Admissions</a>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <span>lifelight.foundation</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>admission@lifelight.foundation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3><i class="fas fa-lightbulb"></i> Dalswin Institute</h3>
+                    <p>Developing strategic entrepreneurs since 2010. Transforming ideas into successful ventures.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#courses">Programs</a></li>
+                        <li><a href="#">Contact: Email admission@lifelight.foundation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Dalswin Life and Business Institute. All rights reserved. | Strategic Entrepreneurship Courses</p>
+                <p>Website: lifelight.foundation | Email: admission@lifelight.foundation</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-out-quad'
+        });
+    </script>
+</body>
+</html>

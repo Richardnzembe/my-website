@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Fundamentals | Free Certificate Included | Dalswin Institute</title>
+    
+    <!-- External Libraries -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-teal: #06b6d4;
+            --dark-bg: #0f172a;
+            --light-bg: #f1f5f9;
+            --card-bg: #ffffff;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --text-white: #f8fafc;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--light-bg) 0%, #e2e8f0 100%);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: var(--dark-bg);
+            color: var(--text-white);
+            padding: 20px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            background: rgba(59, 130, 246, 0.2);
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+        
+        .logo i {
+            color: var(--accent-blue);
+            font-size: 28px;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            color: #94a3b8;
+        }
+        
+        .header-decoration {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            opacity: 0.1;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 100px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1e293b 100%);
+            color: var(--text-white);
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1677442135722-5f8ea49cec8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1990&q=80') center/cover no-repeat;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: #cbd5e1;
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-purple));
+            color: white;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.6);
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--accent-blue);
+            color: var(--accent-blue);
+            background: transparent;
+        }
+        
+        .btn-outline:hover {
+            background: var(--accent-blue);
+            color: white;
+        }
+        
+        /* Free Course Section */
+        .free-course {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-purple));
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+        
+        .course-highlight {
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            padding: 50px;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .course-highlight::before {
+            content: "FREE";
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-purple));
+            color: white;
+            padding: 10px 40px;
+            transform: rotate(45deg);
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .course-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .course-header h3 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+        
+        .course-header .duration {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 15px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        
+        .course-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .feature-card {
+            background: var(--light-bg);
+            border-radius: 15px;
+            padding: 25px;
+            transition: var(--transition);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            background: rgba(59, 130, 246, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: var(--accent-blue);
+        }
+        
+        .feature-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+        
+        .feature-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .feature-card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .feature-card li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 8px;
+            color: var(--accent-blue);
+        }
+        
+        .cta-button {
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            padding: 18px;
+            text-align: center;
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-purple));
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            margin: 30px auto 0;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.6);
+        }
+        
+        /* Paid Specializations */
+        .specializations {
+            background: var(--light-bg);
+            padding: 100px 0;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.4rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: -30px auto 60px;
+        }
+        
+        .all-in-one-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            max-width: 900px;
+            margin: 0 auto;
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+        
+        .all-in-one-card::before {
+            content: "BEST VALUE";
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: linear-gradient(to right, #f59e0b, #fbbf24);
+            color: white;
+            padding: 10px 40px;
+            transform: rotate(45deg);
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 2;
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .card-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .card-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .card-body {
+            padding: 40px;
+        }
+        
+        .price-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .price-amount {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .price-note {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .includes-title {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .specialization-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .spec-card {
+            background: var(--light-bg);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            transition: var(--transition);
+        }
+        
+        .spec-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        
+        .spec-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            background: rgba(59, 130, 246, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            color: var(--accent-blue);
+        }
+        
+        .spec-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+        
+        .spec-card ul {
+            list-style: none;
+            padding-left: 0;
+            text-align: left;
+        }
+        
+        .spec-card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+        
+        .spec-card li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 8px;
+            color: var(--accent-blue);
+            font-size: 14px;
+        }
+        
+        .all-access-button {
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-purple));
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            margin: 40px auto 0;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+        
+        .all-access-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.6);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: var(--card-bg);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .testimonial-card {
+            background: var(--light-bg);
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+            border: 1px solid #e2e8f0;
+            transition: var(--transition);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-card::before {
+            content: """;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(59, 130, 246, 0.1);
+            line-height: 1;
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        .author-details h4 {
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+        
+        .author-details p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* FAQ */
+        .faq {
+            background: var(--light-bg);
+            padding: 100px 0;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .faq-question {
+            padding: 25px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-dark);
+        }
+        
+        .faq-question i {
+            transition: var(--transition);
+        }
+        
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+            color: var(--text-light);
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 25px 25px;
+            max-height: 500px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: var(--text-white);
+            padding: 80px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-col h3::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent-blue);
+        }
+        
+        .footer-col p {
+            color: #94a3b8;
+            margin-bottom: 20px;
+            max-width: 300px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #94a3b8;
+        }
+        
+        .contact-item i {
+            color: var(--accent-blue);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-blue);
+            transform: translateX(5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #1e293b;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        /* Animation classes for AOS */
+        [data-aos] {
+            transition: opacity 0.8s, transform 0.8s;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.4rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .course-highlight {
+                padding: 30px 20px;
+            }
+            
+            .all-in-one-card::before {
+                right: -35px;
+                padding: 8px 35px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .logo-container {
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .course-header h3 {
+                font-size: 1.8rem;
+            }
+            
+            .price-amount {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="logo">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Dalswin Institute</h1>
+                        <p>AI Education & Innovation</p>
+                    </div>
+                </div>
+                <div class="header-cta">
+                    <a href="https://tally.so/r/nr1raX" class="btn btn-outline">Enroll Free</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1>AI Fundamentals</h1>
+                <p>Master the core concepts of Artificial Intelligence with our comprehensive free course - certificate included!</p>
+                <div class="hero-btns">
+                    <a href="https://tally.so/r/nr1raX" class="btn btn-primary" data-aos="fade-up" data-aos-delay="100">Start Learning Now</a>
+                    <a href="#course" class="btn btn-outline" data-aos="fade-up" data-aos-delay="200">Course Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Free Course Section -->
+    <section id="course" class="free-course">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Free AI Fundamentals</h2>
+                <p>2-Week Comprehensive Introduction to Artificial Intelligence with Certificate</p>
+            </div>
+            
+            <div class="course-highlight" data-aos="fade-up">
+                <div class="course-header">
+                    <h3>AI Fundamentals Course</h3>
+                    <p class="duration">2-Week Access | Completely Free</p>
+                    <div class="badge">
+                        <i class="fas fa-certificate"></i> Certificate Included
+                    </div>
+                </div>
+                
+                <div class="course-features">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>Core Concepts</h4>
+                        <ul>
+                            <li>Introduction to AI & Machine Learning</li>
+                            <li>Neural Networks Fundamentals</li>
+                            <li>Natural Language Processing Basics</li>
+                            <li>Computer Vision Essentials</li>
+                            <li>Ethics in Artificial Intelligence</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h4>Hands-On Learning</h4>
+                        <ul>
+                            <li>Interactive coding exercises</li>
+                            <li>Real-world AI applications</li>
+                            <li>AI model experimentation</li>
+                            <li>Practical implementation guides</li>
+                            <li>No installation required</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Learning Experience</h4>
+                        <ul>
+                            <li>Self-paced learning</li>
+                            <li>Expert video lectures</li>
+                            <li>Downloadable resources</li>
+                            <li>Community discussion forums</li>
+                            <li>Certificate of completion</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <a href="https://tally.so/r/nr1raX" class="cta-button" data-aos="fade-up">Enroll in Free Course</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Paid Specializations -->
+    <section class="specializations">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>AI Specializations</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Full access to all specialization courses for a single payment</p>
+            </div>
+            
+            <div class="all-in-one-card" data-aos="fade-up">
+                <div class="card-header">
+                    <h2>All-Access Specialization Bundle</h2>
+                    <p>Get complete access to all AI specialization courses with a single payment</p>
+                </div>
+                <div class="card-body">
+                    <div class="price-container">
+                        <div class="price-amount">$45</div>
+                        <p class="price-note">One-time payment for all courses</p>
+                        <p class="price-note">Professional certificates included</p>
+                    </div>
+                    
+                    <div class="includes-title">Includes all 3 specialization courses:</div>
+                    
+                    <div class="specialization-cards">
+                        <div class="spec-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="spec-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h4>AI in Education</h4>
+                            <ul>
+                                <li>Personalized learning systems</li>
+                                <li>Automated grading</li>
+                                <li>Educational data mining</li>
+                                <li>AI tutoring systems</li>
+                                <li>Certificate included</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="spec-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="spec-icon">
+                                <i class="fas fa-pen-fancy"></i>
+                            </div>
+                            <h4>AI in Content Creation</h4>
+                            <ul>
+                                <li>Automated content generation</li>
+                                <li>AI-assisted writing</li>
+                                <li>Visual content creation</li>
+                                <li>Video synthesis</li>
+                                <li>Certificate included</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="spec-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="spec-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>AI in Business</h4>
+                            <ul>
+                                <li>AI-driven decisions</li>
+                                <li>Customer prediction</li>
+                                <li>Process automation</li>
+                                <li>Predictive analytics</li>
+                                <li>Certificate included</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <a href="https://tally.so/r/nr1raX" class="all-access-button">Get All Specializations for $45</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>What Students Say</h2>
+                <p>Hear from our AI learners around the world</p>
+            </div>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <p class="testimonial-content">"I was amazed to get a professional certificate for free with the AI Fundamentals course. The content was top-notch and the certificate helped me land an interview for a data science role."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">S</div>
+                        <div class="author-details">
+                            <h4>Sarah Johnson</h4>
+                            <p>Data Analyst</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <p class="testimonial-content">"The all-access bundle is incredible value. For just $45, I got three complete courses that would have cost hundreds elsewhere. The AI in Business course transformed how I run my startup."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">R</div>
+                        <div class="author-details">
+                            <h4>Raj Patel</h4>
+                            <p>Startup Founder</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <p class="testimonial-content">"As an educator, the free AI Fundamentals course gave me exactly what I needed to understand this technology. The certificate was a nice bonus that I added to my professional portfolio."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-details">
+                            <h4>Michael Chen</h4>
+                            <p>High School Teacher</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about our AI courses</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">
+                        Is the AI Fundamentals course really free? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, absolutely! Our AI Fundamentals course is completely free. You get full 2-week access to all course materials, exercises, and resources without any cost. Plus, you receive a professional certificate upon completion at no charge.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">
+                        What's included in the paid bundle? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The $45 bundle gives you lifetime access to all three specialization courses: AI in Education, AI in Content Creation, and AI in Business. Each course includes comprehensive content, practical projects, and a professional certificate upon completion.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">
+                        Do I need to take the free course before the specializations? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>While it's recommended to start with the free AI Fundamentals course to build a solid foundation, it's not required. The specialization courses are designed to be accessible even if you have some prior knowledge of AI concepts.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">
+                        How long do I have access to the paid courses? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>When you purchase the specialization bundle, you get lifetime access to all three courses. This includes all future updates and additions to the course content.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">
+                        Are the certificates professionally recognized? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, our certificates are professionally designed and recognized within the industry. Many of our students have used them to enhance their resumes, LinkedIn profiles, and job applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Dalswin Institute</h3>
+                    <p>Providing cutting-edge AI education to empower the next generation of innovators and problem solvers.</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <span>lifelight.foundation</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>admission@lifelight.foundation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#course">Free AI Course</a></li>
+                        <li><a href="#">Specializations Bundle</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">AI Blog</a></li>
+                        <li><a href="#">Learning Resources</a></li>
+                        <li><a href="#">Career Guidance</a></li>
+                        <li><a href="#">Research Papers</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Specializations</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">AI in Education</a></li>
+                        <li><a href="#">AI in Content Creation</a></li>
+                        <li><a href="#">AI in Business</a></li>
+                        <li><a href="#">AI in Healthcare</a></li>
+                        <li><a href="#">AI Ethics</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Dalswin Life and Business Institute. All rights reserved.</p>
+                <p>Website: lifelight.foundation | Email: admission@lifelight.foundation</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-out-quad'
+        });
+        
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

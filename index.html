@@ -3,27 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dalswin Institute | Professional Education Programs</title>
-    
-    <!-- External Libraries -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <title>Dalswin Life and Business Institute - Professional Online Courses</title>
+    <meta name="description" content="100% online courses from Dalswin Life and Business Institute. Accredited diplomas and certificates in Business, HR, AI, and personal development.">
+    <meta name="keywords" content="online courses, business administration, human resources, counselling, AI, emotional intelligence, entrepreneurship, spiritual awakening, online education">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #3a7bd5;
-            --secondary: #00d2ff;
-            --diploma: #11998e;
-            --ai: #5d69b3;
-            --certificate: #e6b325;
-            --free: #ff7e5f;
-            --spiritual: #8a4fff;
-            --business: #2563eb;
-            --dark: #2c3e50;
-            --light: #f8f9fa;
-            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --primary-color: #2e8b57;
+            --primary-light: #3cb371;
+            --primary-lighter: #e8f5e9;
+            --secondary-color: #1a73e8;
+            --text-dark: #202124;
+            --text-medium: #5f6368;
+            --text-light: #70757a;
+            --background-light: #f8f9fa;
+            --border-color: #dadce0;
+            --border-radius: 8px;
+            --box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            --transition: all 0.3s ease;
         }
         
         * {
@@ -33,271 +31,287 @@
         }
         
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f5f7fa;
-            color: #333;
+            font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
-            overflow-x: hidden;
+            color: var(--text-dark);
+            background-color: white;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--text-dark);
         }
         
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 15px;
         }
         
         /* Header Styles */
         header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
+            background-color: white;
             padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
         }
         
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
         
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .logo-icon {
-            width: 50px;
             height: 50px;
+            width: auto;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid var(--primary-light);
+        }
+        
+        .institute-name {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+        
+        .institute-tagline {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+        
+        .nav-links {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
+            gap: 25px;
         }
         
-        .logo-text h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-        
-        .logo-text p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-        
-        .nav-buttons {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .btn {
-            padding: 10px 25px;
-            border-radius: 50px;
+        .nav-links a {
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
             transition: var(--transition);
-            display: inline-block;
-            text-align: center;
-            cursor: pointer;
+            position: relative;
         }
         
-        .btn-login {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+        .nav-links a:hover {
+            color: var(--primary-color);
         }
         
-        .btn-login:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
         }
         
         /* Hero Section */
         .hero {
-            padding: 120px 0 80px;
+            background: linear-gradient(120deg, #f0f9f0 0%, #e6f4e6 100%);
+            padding: 100px 0 70px;
             text-align: center;
-            background: linear-gradient(rgba(58, 123, 213, 0.9), rgba(0, 210, 255, 0.8)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            color: white;
+            margin-bottom: 40px;
             position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(60, 179, 113, 0.1);
         }
         
         .hero::after {
             content: "";
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 20px;
-            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="white"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="white"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="white"/></svg>');
-            background-size: cover;
-            z-index: 1;
+            bottom: -80px;
+            left: -80px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(60, 179, 113, 0.08);
         }
         
-        .hero-content {
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            line-height: 1.2;
             max-width: 800px;
-            margin: 0 auto;
+            margin-left: auto;
+            margin-right: auto;
             position: relative;
             z-index: 2;
         }
         
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-        
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            opacity: 0.9;
+            font-size: 1.2rem;
+            color: var(--text-medium);
             max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto 30px;
+            position: relative;
+            z-index: 2;
         }
         
-        .hero-btns {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 30px;
-        }
-        
-        .btn-primary {
-            background: white;
-            color: var(--primary);
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
-        }
-        
-        .btn-primary:hover {
-            background: #f5f7fa;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
-        }
-        
-        .btn-outline {
-            border: 2px solid white;
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-color);
             color: white;
-            background: transparent;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(46, 139, 87, 0.25);
+            position: relative;
+            z-index: 2;
         }
         
-        .btn-outline:hover {
+        .cta-button:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(46, 139, 87, 0.35);
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             background: white;
-            color: var(--primary);
+            padding: 12px 20px;
+            border-radius: 50px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .badge:hover {
+            transform: translateY(-5px);
+        }
+        
+        .badge i {
+            font-size: 1.4rem;
+            color: var(--primary-color);
         }
         
         /* Courses Section */
-        .courses-section {
-            padding: 100px 0;
-            background: white;
-        }
-        
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
+            margin: 70px 0 40px;
+            position: relative;
         }
         
         .section-title h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            color: var(--dark);
+            font-size: 2.2rem;
             margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title h2::after {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            border-radius: 2px;
         }
         
         .section-title p {
-            font-size: 1.2rem;
-            color: #666;
+            color: var(--text-medium);
             max-width: 700px;
-            margin: 20px auto 0;
+            margin: 0 auto;
+            font-size: 1.1rem;
         }
         
-        .courses-grid {
+        .courses-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
             gap: 30px;
+            margin-bottom: 50px;
         }
         
         .course-card {
             background: white;
-            border-radius: 15px;
+            border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: var(--shadow);
+            box-shadow: var(--box-shadow);
             transition: var(--transition);
-            border: 1px solid #eaeaea;
             display: flex;
             flex-direction: column;
+            height: 100%;
+            border: 1px solid var(--border-color);
         }
         
         .course-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
         }
         
-        .course-header {
-            padding: 25px;
-            text-align: center;
-            color: white;
+        .course-image {
+            height: 180px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
             position: relative;
         }
         
-        .diploma {
-            background: linear-gradient(135deg, var(--diploma) 0%, #38ef7d 100%);
+        .course-image::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.6) 100%);
         }
         
-        .ai {
-            background: linear-gradient(135deg, var(--ai) 0%, #9d65c9 100%);
-        }
-        
-        .certificate {
-            background: linear-gradient(135deg, var(--certificate) 0%, #f9d423 100%);
-        }
-        
-        .free {
-            background: linear-gradient(135deg, var(--free) 0%, #feb47b 100%);
-        }
-        
-        .spiritual {
-            background: linear-gradient(135deg, var(--spiritual) 0%, #b18aff 100%);
-        }
-        
-        .business {
-            background: linear-gradient(135deg, var(--business) 0%, #3b82f6 100%);
-        }
-        
-        .course-header h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            font-weight: 600;
+        .course-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            z-index: 2;
         }
         
         .course-duration {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 5px 15px;
-            border-radius: 20px;
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
             font-size: 0.9rem;
-            margin-top: 10px;
+            font-weight: 500;
+            z-index: 2;
         }
         
         .course-body {
@@ -307,107 +321,94 @@
             flex-direction: column;
         }
         
+        .course-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            min-height: 60px;
+        }
+        
         .course-description {
-            margin-bottom: 20px;
+            color: var(--text-medium);
+            margin-bottom: 25px;
             flex-grow: 1;
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
         
-        .course-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-        }
-        
-        .course-btn {
-            flex: 1;
-            padding: 12px;
-            text-align: center;
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: white;
+            color: var(--primary-color);
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 4px;
             font-weight: 600;
             transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+            text-align: center;
+            border: 1px solid var(--primary-color);
+            font-size: 0.95rem;
+            width: 100%;
         }
         
-        .login-btn {
-            background: rgba(58, 123, 213, 0.1);
-            color: var(--primary);
-            border: 1px solid rgba(58, 123, 213, 0.3);
-        }
-        
-        .login-btn:hover {
-            background: rgba(58, 123, 213, 0.2);
-            transform: translateY(-2px);
-        }
-        
-        .apply-btn {
-            background: var(--primary);
+        .btn:hover {
+            background: var(--primary-color);
             color: white;
-            box-shadow: 0 5px 15px rgba(58, 123, 213, 0.4);
         }
         
-        .apply-btn:hover {
-            background: #2a5da0;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(58, 123, 213, 0.6);
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--text-light);
+            color: var(--text-light);
         }
         
-        .free-btn {
-            background: var(--free);
-        }
-        
-        .free-btn:hover {
-            background: #e06d50;
+        .btn-outline:hover {
+            background: #f5f5f5;
+            color: var(--text-dark);
+            border-color: var(--text-dark);
         }
         
         /* Testimonials */
         .testimonials {
+            background: var(--background-light);
             padding: 100px 0;
-            background: linear-gradient(135deg, rgba(58, 123, 213, 0.05) 0%, rgba(0, 210, 255, 0.05) 100%);
+            margin: 60px 0;
         }
         
         .testimonial-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 30px;
-            margin-top: 50px;
         }
         
-        .testimonial-card {
+        .testimonial {
             background: white;
-            border-radius: 15px;
             padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
             position: relative;
-            border: 1px solid #eee;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
         }
         
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        
-        .testimonial-card::before {
-            content: """;
+        .testimonial:before {
+            content: '"';
             position: absolute;
-            top: 20px;
+            top: 15px;
             left: 20px;
-            font-family: 'Playfair Display', serif;
-            font-size: 5rem;
-            color: rgba(58, 123, 213, 0.1);
-            line-height: 1;
+            font-size: 4rem;
+            color: var(--primary-light);
+            opacity: 0.1;
+            font-family: Georgia, serif;
         }
         
-        .testimonial-content {
-            font-style: italic;
-            color: #555;
-            margin-bottom: 20px;
+        .testimonial-text {
+            margin-bottom: 30px;
+            color: var(--text-medium);
             position: relative;
             z-index: 1;
+            font-style: italic;
+            font-size: 1.05rem;
+            line-height: 1.7;
         }
         
         .testimonial-author {
@@ -416,83 +417,99 @@
             gap: 15px;
         }
         
-        .author-avatar {
+        .author-initials {
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: var(--primary-lighter);
+            color: var(--primary-color);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
             font-weight: 600;
+            font-size: 1.1rem;
         }
         
-        .author-details h4 {
-            color: var(--dark);
-            margin-bottom: 5px;
+        .author-info h4 {
+            font-size: 1.05rem;
+            margin-bottom: 4px;
         }
         
-        .author-details p {
-            color: #777;
+        .author-info p {
             font-size: 0.9rem;
+            color: var(--text-light);
         }
         
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            padding: 100px 0;
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
             text-align: center;
-            color: white;
         }
         
-        .cta-content {
-            max-width: 700px;
-            margin: 0 auto;
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
         }
         
-        .cta-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            margin-bottom: 20px;
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            max-width: 250px;
         }
         
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
+        .contact-item i {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-lighter);
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-item span {
+            color: var(--text-medium);
         }
         
         /* Footer */
         footer {
-            background: var(--dark);
+            background: var(--text-dark);
             color: white;
-            padding: 60px 0 30px;
+            padding: 80px 0 30px;
         }
         
-        .footer-grid {
+        .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
         
-        .footer-col h3 {
-            font-size: 1.5rem;
+        .footer-column h3 {
+            color: white;
+            font-size: 1.25rem;
             margin-bottom: 25px;
             position: relative;
-            display: inline-block;
+            padding-bottom: 15px;
         }
         
-        .footer-col h3::after {
-            content: "";
+        .footer-column h3::after {
+            content: '';
             position: absolute;
-            bottom: -8px;
+            bottom: 0;
             left: 0;
-            width: 40px;
+            width: 50px;
             height: 3px;
-            background: var(--primary);
-            border-radius: 2px;
+            background: var(--primary-light);
         }
         
         .footer-links {
@@ -500,13 +517,14 @@
         }
         
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
         
         .footer-links a {
-            color: #aaa;
+            color: #bdc1c6;
             text-decoration: none;
             transition: var(--transition);
+            font-size: 1rem;
             display: inline-block;
         }
         
@@ -515,541 +533,474 @@
             transform: translateX(5px);
         }
         
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #aaa;
-        }
-        
         .copyright {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #aaa;
-            font-size: 0.9rem;
-        }
-        
-        /* Animation classes for AOS */
-        [data-aos] {
-            transition: opacity 0.8s, transform 0.8s;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.95rem;
+            color: #9aa0a6;
         }
         
         /* Responsive Design */
-        @media (max-width: 992px) {
+        @media (max-width: 900px) {
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 2.3rem;
             }
             
             .section-title h2 {
-                font-size: 2.4rem;
+                font-size: 1.9rem;
+            }
+            
+            .nav-links {
+                display: none;
             }
         }
         
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-            
-            .nav-buttons {
-                justify-content: center;
-            }
-            
             .hero {
-                padding: 80px 0 60px;
+                padding: 80px 0 50px;
             }
             
-            .hero h1 {
-                font-size: 2.4rem;
+            .trust-badges {
+                gap: 15px;
             }
             
-            .hero p {
-                font-size: 1.1rem;
+            .courses-container {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             }
             
-            .hero-btns {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .course-buttons {
-                flex-direction: column;
+            .testimonials {
+                padding: 70px 0;
             }
         }
         
-        @media (max-width: 576px) {
-            .logo {
-                flex-direction: column;
-                text-align: center;
-            }
-            
+        @media (max-width: 480px) {
             .hero h1 {
                 font-size: 2rem;
             }
             
-            .courses-grid {
+            .hero p {
+                font-size: 1.05rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.7rem;
+            }
+            
+            .footer-content {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header Section -->
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">
-                    <div class="logo-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="logo-text">
-                        <h1>Dalswin Institute</h1>
-                        <p>Life & Business Excellence</p>
+                <div class="logo-container">
+                    <img src="https://lifelightfoundation.wordpress.com/wp-content/uploads/2025/05/chatgpt-image-jun-7-2025-03_30_54-pm.png" alt="Dalswin Institute Logo" class="logo">
+                    <div>
+                        <div class="institute-name">Dalswin Life and Business Institute</div>
+                        <div class="institute-tagline">100% Online Professional Education</div>
                     </div>
                 </div>
-                <div class="nav-buttons">
-                    <a href="#" class="btn btn-login">
-                        <i class="fas fa-user"></i> Student Login
-                    </a>
+                <div class="nav-links">
+                    <a href="#programs">Programs</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#contact">Contact</a>
                 </div>
             </div>
         </div>
     </header>
-    
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Transform Your Career with Professional Education</h1>
-                <p>Discover our comprehensive range of diplomas and certificates designed for career advancement and personal growth</p>
-                <div class="hero-btns">
-                    <a href="#courses" class="btn btn-primary">Explore Courses</a>
-                    <a href="#" class="btn btn-outline">Student Login</a>
+            <h1>Transform Your Career with Accredited Online Courses</h1>
+            <p>Dalswin Institute offers industry-relevant programs designed to help you succeed. Learn 100% online with expert instructors and flexible scheduling.</p>
+            <a href="#programs" class="cta-button">Explore Our Programs</a>
+            
+            <div class="trust-badges">
+                <div class="badge">
+                    <i class="fas fa-tag"></i>
+                    <div>Affordable Pricing</div>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <div>Expert Instructors</div>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-user-graduate"></i>
+                    <div>Career Advancement</div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Courses Section -->
-    <section id="courses" class="courses-section">
-        <div class="container">
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Programs Section -->
+        <section id="programs">
             <div class="section-title">
                 <h2>Our Academic Programs</h2>
-                <p>Choose from our diverse range of diplomas and certificates</p>
+                <p>Choose from our accredited diplomas and certificates designed for career advancement</p>
             </div>
             
-            <div class="courses-grid">
-                <!-- 2-Year Diplomas -->
-                <div class="course-card" data-aos="fade-up">
-                    <div class="course-header diploma">
-                        <h3>Business Administration</h3>
-                        <p class="course-duration">2 Years Diploma</p>
+            <!-- Two-Year Programs -->
+            <h3 style="margin: 40px 0 20px; font-size: 1.5rem; color: var(--primary-color);">Two-Year Diploma Programs</h3>
+            <div class="courses-container">
+                <div class="course-card">
+                    <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80');">
+                        <div class="course-category">Business</div>
+                        <div class="course-duration">2 Years</div>
                     </div>
                     <div class="course-body">
+                        <h3 class="course-title">Business Administration</h3>
                         <div class="course-description">
-                            Comprehensive business training covering management, finance, marketing, and strategic planning for leadership roles.
+                            Comprehensive business management training covering modern administration, leadership, and strategic decision-making.
                         </div>
-                        <div class="course-buttons">
-                            <a href="#" class="course-btn login-btn">
-                                <i class="fas fa-sign-in-alt"></i> Login
-                            </a>
-                            <a href="https://richardnzembe.github.io/my-website/Business-Administration.html" class="course-btn apply-btn">
-                                <i class="fas fa-edit"></i> Apply
-                            </a>
-                        </div>
+                        <a href="https://richardnzembe.github.io/my-website/Business-Administration.html" class="btn">Program Details</a>
                     </div>
                 </div>
                 
-                <div class="course-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="course-header diploma">
-                        <h3>Human Resources Management</h3>
-                        <p class="course-duration">2 Years Diploma</p>
+                <div class="course-card">
+                    <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80');">
+                        <div class="course-category">Management</div>
+                        <div class="course-duration">2 Years</div>
                     </div>
                     <div class="course-body">
+                        <h3 class="course-title">Human Resources Management</h3>
                         <div class="course-description">
-                            Develop expertise in recruitment, talent management, employee relations, and organizational development.
+                            Master talent acquisition, employee development, and organizational psychology for HR excellence.
                         </div>
-                        <div class="course-buttons">
-                            <a href="#" class="course-btn login-btn">
-                                <i class="fas fa-sign-in-alt"></i> Login
-                            </a>
-                            <a href="https://richardnzembe.github.io/my-website/Human-Resourses-Management-Page.html" class="course-btn apply-btn">
-                                <i class="fas fa-edit"></i> Apply
-                            </a>
-                        </div>
+                        <a href="https://richardnzembe.github.io/my-website/Human-Resourses-Management-Page.html" class="btn">Program Details</a>
                     </div>
                 </div>
                 
-                <div class="course-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="course-header diploma">
-                        <h3>Counselling & Spiritual Awakening</h3>
-                        <p class="course-duration">2 Years Diploma</p>
+                <div class="course-card">
+                    <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80');">
+                        <div class="course-category">Counselling</div>
+                        <div class="course-duration">2 Years</div>
                     </div>
                     <div class="course-body">
+                        <h3 class="course-title">Counselling & Spiritual Awakening</h3>
                         <div class="course-description">
-                            Integrate professional counseling techniques with spiritual practices for holistic healing and personal transformation.
+                            Integrate professional counseling techniques with spiritual awareness for holistic healing practices.
                         </div>
-                        <div class="course-buttons">
-                            <a href="#" class="course-btn login-btn">
-                                <i class="fas fa-sign-in-alt"></i> Login
-                            </a>
-                            <a href="https://richardnzembe.github.io/my-website/Counselling-&-Spiritual-Awakening.html" class="course-btn apply-btn">
-                                <i class="fas fa-edit"></i> Apply
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- AI Courses -->
-                <div class="course-card" data-aos="fade-up">
-                    <div class="course-header free">
-                        <h3>AI Fundamentals</h3>
-                        <p class="course-duration">2 Weeks • Free</p>
-                    </div>
-                    <div class="course-body">
-                        <div class="course-description">
-                            Master core AI concepts, machine learning fundamentals, and practical applications. Certificate included.
-                        </div>
-                        <div class="course-buttons">
-                            <a href="#" class="course-btn login-btn">
-                                <i class="fas fa-sign-in-alt"></i> Login
-                            </a>
-                            <a href="https://richardnzembe.github.io/my-website/AI-courses.html" class="course-btn apply-btn free-btn">
-                                <i class="fas fa-edit"></i> Enroll Free
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="course-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="course-header ai">
-                        <h3>AI in Content Creation</h3>
-                        <p class="course-duration">4 Weeks Certificate</p>
-                    </div>
-                    <div class="course-body">
-                        <div class="course-description">
-                            Learn to leverage AI tools for automated content generation, writing assistance, and visual content creation.
-                        </div>
-                        <div class="course-buttons">
-                            <a href="#" class="course-btn login-btn">
-                                <i class="fas fa-sign-in-alt"></i> Login
-                            </a>
-                            <a href="https://richardnzembe.github.io/my-website/AI-courses.html" class="course-btn apply-btn">
-                                <i class="fas fa-edit"></i> Apply
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="course-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="course-header ai">
-                        <h3>AI in Education</h3>
-                        <p class="course-duration">4 weeks Certificate</p>
-                    </div>
-                    <div class="course-body">
-                        <div class="course-description">
-                            Explore AI applications in personalized learning, automated grading, educational data mining, and tutoring systems.
-                        </div>
-                        <div class="course-buttons">
-                            <a href="#" class="course-btn login-btn">
-                                <i class="fas fa-sign-in-alt"></i> Login
-                            </a>
-                            <a href="https://richardnzembe.github.io/my-website/AI-courses.html" class="course-btn apply-btn">
-                                <i class="fas fa-edit"></i> Apply
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 1-Year Diploma -->
-                <div class="course-card" data-aos="fade-up">
-                    <div class="course-header business">
-                        <h3>Life Skills & Business Innovation</h3>
-                        <p class="course-duration">1 Year Diploma</p>
-                    </div>
-                    <div class="course-body">
-                        <div class="course-description">
-                            Develop essential life skills combined with innovative business strategies for personal and professional success.
-                        </div>
-                        <div class="course-buttons">
-                            <a href="#" class="course-btn login-btn">
-                                <i class="fas fa-sign-in-alt"></i> Login
-                            </a>
-                            <a href="https://richardnzembe.github.io/my-website/Life-Skills-&-Business-Innovation-Course.html" class="course-btn apply-btn">
-                                <i class="fas fa-edit"></i> Apply
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 3-Month Certificates -->
-                <div class="course-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="course-header certificate">
-                        <h3>Emotional Intelligence</h3>
-                        <p class="course-duration">3 Months Certificate</p>
-                    </div>
-                    <div class="course-body">
-                        <div class="course-description">
-                            Enhance self-awareness, self-regulation, empathy, and relationship management for personal and professional growth.
-                        </div>
-                        <div class="course-buttons">
-                            <a href="#" class="course-btn login-btn">
-                                <i class="fas fa-sign-in-alt"></i> Login
-                            </a>
-                            <a href="https://richardnzembe.github.io/my-website/Emotional-Intelligence.html" class="course-btn apply-btn">
-                                <i class="fas fa-edit"></i> Apply
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="course-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="course-header certificate">
-                        <h3>Strategic Entrepreneurship Practice</h3>
-                        <p class="course-duration">3 Months Certificate</p>
-                    </div>
-                    <div class="course-body">
-                        <div class="course-description">
-                            Master entrepreneurial strategies, business modeling, funding approaches, and growth techniques.
-                        </div>
-                        <div class="course-buttons">
-                            <a href="#" class="course-btn login-btn">
-                                <i class="fas fa-sign-in-alt"></i> Login
-                            </a>
-                            <a href="https://richardnzembe.github.io/my-website/Strategic-Entrepreneurship.html" class="course-btn apply-btn">
-                                <i class="fas fa-edit"></i> Apply
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="course-card" data-aos="fade-up">
-                    <div class="course-header spiritual">
-                        <h3>Spiritual Awakening</h3>
-                        <p class="course-duration">3 Months Certificate</p>
-                    </div>
-                    <div class="course-body">
-                        <div class="course-description">
-                            Deepen self-awareness, explore consciousness, and integrate spiritual practices into daily life.
-                        </div>
-                        <div class="course-buttons">
-                            <a href="#" class="course-btn login-btn">
-                                <i class="fas fa-sign-in-alt"></i> Login
-                            </a>
-                            <a href="https://richardnzembe.github.io/my-website/Strategic-Entrepreneurship.html" class="course-btn apply-btn">
-                                <i class="fas fa-edit"></i> Apply
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 2-Week Certificates -->
-                <div class="course-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="course-header certificate">
-                        <h3>Emotional Intelligence</h3>
-                        <p class="course-duration">2 Weeks Certificate</p>
-                    </div>
-                    <div class="course-body">
-                        <div class="course-description">
-                            Intensive introduction to emotional intelligence fundamentals for personal and professional development.
-                        </div>
-                        <div class="course-buttons">
-                            <a href="#" class="course-btn login-btn">
-                                <i class="fas fa-sign-in-alt"></i> Login
-                            </a>
-                            <a href="https://richardnzembe.github.io/my-website/Emotional-Intelligence.html" class="course-btn apply-btn">
-                                <i class="fas fa-edit"></i> Apply
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="course-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="course-header certificate">
-                        <h3>Strategic Entrepreneurship Practice</h3>
-                        <p class="course-duration">2 Weeks Certificate</p>
-                    </div>
-                    <div class="course-body">
-                        <div class="course-description">
-                            Fast-paced program covering essential entrepreneurial strategies and business modeling techniques.
-                        </div>
-                        <div class="course-buttons">
-                            <a href="#" class="course-btn login-btn">
-                                <i class="fas fa-sign-in-alt"></i> Login
-                            </a>
-                            <a href="Strategic-Entrepreneurship.html" class="course-btn apply-btn">
-                                <i class="fas fa-edit"></i> Apply
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="course-card" data-aos="fade-up">
-                    <div class="course-header spiritual">
-                        <h3>Spiritual Awakening</h3>
-                        <p class="course-duration">2 Weeks Certificate</p>
-                    </div>
-                    <div class="course-body">
-                        <div class="course-description">
-                            Short intensive program introducing mindfulness, meditation, and self-discovery practices.
-                        </div>
-                        <div class="course-buttons">
-                            <a href="#" class="course-btn login-btn">
-                                <i class="fas fa-sign-in-alt"></i> Login
-                            </a>
-                            <a href="Spiritual-Awakening.html" class="course-btn apply-btn">
-                                <i class="fas fa-edit"></i> Apply
-                            </a>
-                        </div>
+                        <a href="https://richardnzembe.github.io/my-website/Counselling-&-Spiritual-Awakening.html" class="btn">Program Details</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
+
+            <!-- Certificate Programs -->
+            <h3 style="margin: 40px 0 20px; font-size: 1.5rem; color: var(--primary-color);">Professional Certificates</h3>
+            <div class="courses-container">
+                <div class="course-card">
+                    <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80');">
+                        <div class="course-category">Psychology</div>
+                        <div class="course-duration">3 Months</div>
+                    </div>
+                    <div class="course-body">
+                        <h3 class="course-title">Emotional Intelligence</h3>
+                        <div class="course-description">
+                            Develop self-awareness, empathy, and relationship management skills for professional success.
+                        </div>
+                        <a href="https://richardnzembe.github.io/my-website/Emotional-Intelligence.html" class="btn">Program Details</a>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80');">
+                        <div class="course-category">Business</div>
+                        <div class="course-duration">3 Months</div>
+                    </div>
+                    <div class="course-body">
+                        <h3 class="course-title">Strategic Entrepreneurship Practice</h3>
+                        <div class="course-description">
+                            Learn to develop business plans, secure funding, and implement growth strategies for startups.
+                        </div>
+                        <a href="https://richardnzembe.github.io/my-website/Strategic-Entrepreneurship.html" class="btn">Program Details</a>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80');">
+                        <div class="course-category">Spirituality</div>
+                        <div class="course-duration">3 Months</div>
+                    </div>
+                    <div class="course-body">
+                        <h3 class="course-title">Spiritual Awakening</h3>
+                        <div class="course-description">
+                            Explore consciousness, mindfulness, and personal transformation for a more meaningful life.
+                        </div>
+                        <a href="https://richardnzembe.github.io/my-website/Strategic-Entrepreneurship.html" class="btn">Program Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Short Courses -->
+            <h3 style="margin: 40px 0 20px; font-size: 1.5rem; color: var(--primary-color);">Short Courses</h3>
+            <div class="courses-container">
+                <div class="course-card">
+                    <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80');">
+                        <div class="course-category">Psychology</div>
+                        <div class="course-duration">2 Weeks</div>
+                    </div>
+                    <div class="course-body">
+                        <h3 class="course-title">Emotional Intelligence</h3>
+                        <div class="course-description">
+                            Intensive introduction to emotional intelligence fundamentals for quick skill application.
+                        </div>
+                        <a href="https://richardnzembe.github.io/my-website/Emotional-Intelligence.html" class="btn">Program Details</a>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80');">
+                        <div class="course-category">Business</div>
+                        <div class="course-duration">2 Weeks</div>
+                    </div>
+                    <div class="course-body">
+                        <h3 class="course-title">Strategic Entrepreneurship Practice</h3>
+                        <div class="course-description">
+                            Fast-track program covering essential entrepreneurship concepts and practical strategies.
+                        </div>
+                        <a href="https://courses.lifelight.foundation/Strategic-Entrepreneurship.html" class="btn">Program Details</a>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80');">
+                        <div class="course-category">Spirituality</div>
+                        <div class="course-duration">2 Weeks</div>
+                    </div>
+                    <div class="course-body">
+                        <h3 class="course-title">Spiritual Awakening</h3>
+                        <div class="course-description">
+                            Short immersion into mindfulness practices and spiritual awareness techniques.
+                        </div>
+                        <a href="https://courses.lifelight.foundation/Spiritual-Awakening.html" class="btn">Program Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specialized Programs -->
+            <h3 style="margin: 40px 0 20px; font-size: 1.5rem; color: var(--primary-color);">Specialized Programs</h3>
+            <div class="courses-container">
+                <div class="course-card">
+                    <div class="course-image" style="background-image: url('https://lifelightfoundation.wordpress.com/wp-content/uploads/2025/07/lucid_realism_a_modern_sleek_laptop_with_a_matte_silver_finish_3.jpg');">
+                        <div class="course-category">Technology</div>
+                        <div class="course-duration">Variable</div>
+                    </div>
+                    <div class="course-body">
+                        <h3 class="course-title">AI Courses</h3>
+                        <div class="course-description">
+                            Explore artificial intelligence fundamentals, machine learning, and AI applications.
+                        </div>
+                        <a href="https://richardnzembe.github.io/my-website/AI-courses.html" class="btn">Program Details</a>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80');">
+                        <div class="course-category">Development</div>
+                        <div class="course-duration">1 Year</div>
+                    </div>
+                    <div class="course-body">
+                        <h3 class="course-title">Life Skills & Business Innovation</h3>
+                        <div class="course-description">
+                            Combine essential life skills with business innovation techniques for comprehensive development.
+                        </div>
+                        <a href="https://richardnzembe.github.io/my-website/Life-Skills-&-Business-Innovation-Course.html" class="btn">Program Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming Courses -->
             <div class="section-title">
-                <h2>Student Success Stories</h2>
-                <p>Hear from our graduates about their transformative experiences</p>
+                <h2>Upcoming Programs</h2>
+                <p>New courses launching soon - be the first to know</p>
             </div>
-            
-            <div class="testimonial-grid">
-                <div class="testimonial-card" data-aos="fade-up">
-                    <p class="testimonial-content">"The Business Administration diploma transformed my career. I went from an entry-level position to a management role within 6 months of completing the program."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">M</div>
-                        <div class="author-details">
-                            <h4>travor M</h4>
-                            <p>Business Diploma Graduate</p>
+            <div class="courses-container">
+                <div class="course-card">
+                    <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80');">
+                        <div class="course-category">Technology</div>
+                        <div class="course-duration">Coming Soon</div>
+                    </div>
+                    <div class="course-body">
+                        <h3 class="course-title">Introduction to Computer Science</h3>
+                        <div class="course-description">
+                            Foundational computer science principles, algorithms, and programming concepts for beginners.
                         </div>
+                        <a href="#" class="btn btn-outline">Notify Me When Available</a>
                     </div>
                 </div>
                 
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-                    <p class="testimonial-content">"The AI in Content Creation course revolutionized my marketing career. I've increased content output by 300% while maintaining quality through AI tools."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">S</div>
-                        <div class="author-details">
-                            <h4>Sarah M</h4>
-                            <p>Marketing Director</p>
+                <div class="course-card">
+                    <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80');">
+                        <div class="course-category">AI & Programming</div>
+                        <div class="course-duration">Coming Soon</div>
+                    </div>
+                    <div class="course-body">
+                        <h3 class="course-title">AI in Python</h3>
+                        <div class="course-description">
+                            Practical implementation of artificial intelligence concepts using Python programming language.
+                        </div>
+                        <a href="#" class="btn btn-outline">Notify Me When Available</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Student Success Stories</h2>
+                    <p>Hear from our graduates about their learning experience</p>
+                </div>
+                <div class="testimonial-grid">
+                    <div class="testimonial">
+                        <p class="testimonial-text">"The Business Administration course gave me the skills to advance to a management position. The online format allowed me to balance work and studies effectively."</p>
+                        <div class="testimonial-author">
+                            <div class="author-initials">TM</div>
+                            <div class="author-info">
+                                <h4>Trev M.</h4>
+                                <p>Business Analyst, TechCorp</p>
+                            </div>
                         </div>
                     </div>
+                    
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Completing the Emotional Intelligence certificate transformed how I lead my team. I've seen measurable improvements in workplace relationships and productivity."</p>
+                        <div class="testimonial-author">
+                            <div class="author-initials">RM</div>
+                            <div class="author-info">
+                                <h4>Richard M.</h4>
+                                <p>Operations Manager, HealthPlus</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <p class="testimonial-text">"The Spiritual Awakening course helped me find balance and purpose during a challenging career transition. The instructors provided exceptional support throughout."</p>
+                        <div class="testimonial-author">
+                            <div class="author-initials">PC</div>
+                            <div class="author-info">
+                                <h4>Patience C.</h4>
+                                <p>Life Coach & Wellness Consultant</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Contact Our Admissions Team</h2>
+                    <p>Have questions about our programs? We're here to help</p>
                 </div>
                 
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                    <p class="testimonial-content">"The Emotional Intelligence certificate completely changed how I approach relationships at work. I've been promoted twice since completing the course!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">D</div>
-                        <div class="author-details">
-                            <h4>Davision N</h4>
-                            <p>Team Leader</p>
-                        </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <span>lifelight.foundation</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>admin@lifelight.foundation</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Transform Your Future?</h2>
-                <p>Join thousands of successful graduates who have advanced their careers with our programs</p>
-                <div class="hero-btns">
-                    <a href="#" class="btn btn-primary">
-                        <i class="fas fa-user"></i> Student Login
-                    </a>
-                    <a href="https://richardnzembe.github.io/my-website/index.html#courses" class="btn btn-outline">
-                        <i class="fas fa-book"></i> Browse Courses
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+        </section>
+    </div>
+
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
+            <div class="footer-content">
+                <div class="footer-column">
                     <h3>Dalswin Institute</h3>
-                    <ul class="footer-links">
-                        <li><a href="https://lifelight.foundation/230-2/">About Us</a></li>
-                        <li><a href="#">Faculty</a></li>
-                        <li><a href="https://richardnzembe.github.io/my-website/index.html#courses">Careers</a></li>
-                        <li><a href="https://lifelight.foundation/category/our-courses/">News & Events</a></li>
-                        <li><a href="https://lifelight.foundation/contact-2/">Contact Us</a></li>
-                    </ul>
+                    <p style="color: #bdc1c6; margin-bottom: 20px; line-height: 1.7;">Transforming lives through accessible, high-quality online education since 2010.</p>
+                    <div class="logo-container" style="gap: 10px;">
+                        <img src="https://lifelightfoundation.wordpress.com/wp-content/uploads/2025/05/chatgpt-image-jun-7-2025-03_30_54-pm.png" alt="Dalswin Institute Logo" class="logo" style="height: 40px;">
+                        <div class="institute-name" style="color: white; font-size: 1.2rem;">Dalswin Life and Business Institute</div>
+                    </div>
                 </div>
                 
-                <div class="footer-col">
+                <div class="footer-column">
                     <h3>Programs</h3>
                     <ul class="footer-links">
-                        <li><a href="https://richardnzembe.github.io/my-website/index.html#courses">Diploma Programs</a></li>
-                        <li><a href="https://richardnzembe.github.io/my-website/index.html#courses">Certificate Courses</a></li>
-                        <li><a href="https://richardnzembe.github.io/my-website/AI-courses.html">AI Specializations</a></li>
-                        <li><a href="#">Short Courses</a></li>
-                        <li><a href="https://richardnzembe.github.io/my-website/index.html#courses">Professional Development</a></li>
+                        <li><a href="#programs">Diploma Programs</a></li>
+                        <li><a href="#programs">Professional Certificates</a></li>
+                        <li><a href="#programs">Short Courses</a></li>
+                        <li><a href="#programs">Specialized Programs</a></li>
+                        <li><a href="#programs">Upcoming Courses</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-col">
+                <div class="footer-column">
                     <h3>Resources</h3>
                     <ul class="footer-links">
-                        <li><a href="https://lifelight.foundation/course-catalogue/">Student Portal</a></li>
-                        <li><a href="https://lifelight.foundation/apply-now/">Learning Resources</a></li>
+                        <li><a href="#">Admissions</a></li>
+                        <li><a href="#">Tuition & Financing</a></li>
+                        <li><a href="#">Career Services</a></li>
                         <li><a href="https://lifelight.foundation/category/our-courses/">Blog</a></li>
                         <li><a href="https://lifelight.foundation/faqs/">FAQ</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-col">
-                    <h3>Contact Information</h3>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-globe"></i>
-                            <span>lifelight.foundation</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>admin@lifelight.foundation</span>
-                        </div>
-                        </div>
-                    </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.facebook.com/profile.php?id=61577435517772"><i class="fab fa-facebook-f" style="margin-right: 10px;"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in" style="margin-right: 10px;"></i> LinkedIn</a></li>
+                        <li><a href="https://x.com/DLifelight"><i class="fab fa-twitter" style="margin-right: 10px;"></i> Twitter</a></li>
+                    </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2025 Dalswin Life and Business Institute. All rights reserved.</p>
-                <p>Designed to empower professionals and transform careers</p>
+                &copy; 2025 Dalswin Life and Business Institute. All rights reserved.
             </div>
         </div>
     </footer>
-    
-    <!-- External Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
     <script>
-        // Initialize AOS (Animate On Scroll)
-        AOS.init({
-            duration: 1000,
-            once: true,
-            easing: 'ease-out-quad'
+        // Simple animations for course cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const courseCards = document.querySelectorAll('.course-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            courseCards.forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
         });
     </script>
 </body>
